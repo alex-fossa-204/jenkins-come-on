@@ -17,6 +17,7 @@ pipeline {
         stage('second-stage') {
             steps {
                 sh 'ls'
+                sh 'cat just-text.txt'
                 echo "Good bye, bad boy, ${DEVELOPER_NAME}"
             }
         }

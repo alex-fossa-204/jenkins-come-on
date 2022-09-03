@@ -16,7 +16,7 @@ pipeline {
         }
         stage('second-stage') {
             steps {
-                sh ls
+                sh 'ls'
                 echo "Good bye, bad boy, ${DEVELOPER_NAME}"
             }
         }

@@ -1,17 +1,22 @@
 pipeline {
-  agent any
-  environment {
-    PROJECT_NAME = "Jenkins Come On Project"
-    DEVELOPER = "alex-fossa"
-  }
-  stages {
-    stage('first-stage') {
-      echo "Build started"
-      echo "Hello, ${DEVELOPER}"
-      echo "Your project had been built successfully, project name is ${PROJECT_NAME}"
+    agent any
+    environment {
+        PROJECT_NAME = "My First Declatative Pipeline"
+        DEVELOPER_NAME = "abakulin"
     }
-    stage('last-stage') {
-      echo "Good bye, mister ${DEVELOPER}"
+    stages {
+        stage('first-stage') {
+            steps {
+                echo "Hello from first stage!"
+                echo "Stage started"
+                echo "Do something... ${PROJECT_NAME}, developer is ${DEVELOPER_NAME}"
+                echo "Stage finished"
+            }
+        }
+        stage('second-stage') {
+            steps {
+                echo "Good bye, bad boy, ${DEVELOPER_NAME}"
+            }
+        }
     }
-  }
 }
